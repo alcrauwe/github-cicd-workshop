@@ -8,7 +8,7 @@ on:
       - master
 
 env:
-  someone: KBC
+  SOMEONE: KBC
 
 jobs:
   greet-someone:
@@ -21,9 +21,9 @@ jobs:
       id: greet
       uses: ./.github/actions/greet_someone
       with:
-        who-to-greet: $someone
+        who-to-greet: $SOMEONE
 
-    - name: Conditional check
-      if: ${{ steps.greet.outputs.input }} == ${{ someone }}
-      run: echo "Output matches input"
-      shell: bash
+  #  - name: Conditional check
+   #   if: ${{ steps.greet.outputs.input }} == ${{ someone }}
+    #  run: echo "Output matches input"
+     # shell: bash
