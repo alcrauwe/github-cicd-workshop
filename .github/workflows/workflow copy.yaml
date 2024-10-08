@@ -9,7 +9,9 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    strategy:
+    strategy:    
+      fail-fast: true
+      max-parallel: 1
       matrix:
         environments: ["dev", "int", "prd"]
     environment: ${{ matrix.environments }}
