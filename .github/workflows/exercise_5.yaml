@@ -24,6 +24,6 @@ jobs:
         who-to-greet: ${{ env.SOMEONE }}
 
     - name: Conditional check
-      if: ${{ steps.greet.outputs.input }} == ${{ env.SOMEONE }}
+      if: ${{ steps.greet.outputs.input }} != ${{ env.SOMEONE }}
       run: echo "Output matches input"
       shell: bash
