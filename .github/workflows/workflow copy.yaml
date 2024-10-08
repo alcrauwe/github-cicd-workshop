@@ -34,3 +34,4 @@ jobs:
 
       - name: Build or simulate building
         run: sleep 5
+    needs: build-and-push
