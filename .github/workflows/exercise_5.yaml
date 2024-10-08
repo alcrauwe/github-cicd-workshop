@@ -24,6 +24,6 @@ jobs:
         who-to-greet: $someone
 
     - name: Conditional check
-      if: steps.greet.outputs.input == $someone
+      if: ${{ steps.greet.outputs.input == someone }}
       run: echo "Output matches input"
       shell: bash
