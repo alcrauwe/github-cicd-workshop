@@ -25,5 +25,5 @@ jobs:
 
     - name: Conditional check
       if: ${{ steps.greet.outputs.input != 'KBC' }}
-      run: echo ${{ steps.greet.outputs.input }}
+      run: echo ${{ steps.greet.outputs.who-was-greeted }}
       shell: bash
