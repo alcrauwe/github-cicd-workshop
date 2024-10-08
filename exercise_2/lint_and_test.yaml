@@ -14,6 +14,18 @@ jobs:
       with:
         python-version: '3.12'
     # Add step to install dependencies
+    - run: pip install pytest
+    - run: pytest exercise_2/test_bad_code.py
 
   lint:
     # Complete the lint job configuration
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Check lint
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    # Add step to install dependencies
+    - run: pip install flake8
+    - run: flake8 .
