@@ -26,5 +26,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: acrauwe/github_ex3:latest
+          tags: alcrauwe/github_ex3:latest
           context: exercise_3
