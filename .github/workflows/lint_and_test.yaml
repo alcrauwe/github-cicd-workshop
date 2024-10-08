@@ -29,3 +29,6 @@ jobs:
     # Add step to install dependencies
     - run: pip install flake8
     - run: flake8 .
+
+
+# Exercise number 6 solution to add success/failure badge https://github.com/datamindedacademy/github-cicd/tree/master/content/solutions
