@@ -9,12 +9,7 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    strategy:    
-      fail-fast: true
-      max-parallel: 1
-      matrix:
-        environments: ["dev", "int", "prd"]
-    environment: ${{ matrix.environments }}
+    environment: "dev"
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v4
