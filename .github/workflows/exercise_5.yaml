@@ -23,7 +23,7 @@ jobs:
       with:
         who-to-greet: ${{ env.SOMEONE }}
 
-  #  - name: Conditional check
-   #   if: ${{ steps.greet.outputs.input }} == ${{ someone }}
-    #  run: echo "Output matches input"
-     # shell: bash
+    - name: Conditional check
+      if: ${{ steps.greet.outputs.input }} == ${{ env.SOMEONE }}
+      run: echo "Output matches input"
+      shell: bash
