@@ -21,7 +21,7 @@ jobs:
       id: greet
       uses: ./.github/actions/greet_someone
       with:
-        who-to-greet: env.SOMEONE
+        who-to-greet: 
 
   #  - name: Conditional check
    #   if: ${{ steps.greet.outputs.input }} == ${{ someone }}
