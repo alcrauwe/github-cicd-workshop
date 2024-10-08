@@ -25,6 +25,17 @@ jobs:
       - name: Finish building
         run: echo "Build completed successfully"
 
-#The 2nd job has to deploy to different environments defined by GitHub
-#The job needs to fail for all the environments if one of the deployments fail
-#The job has to only 1 deployment at a time (sequentially dev/int/prd)
+  push:
+    runs-on: ubuntu-latest
+    strategy:    
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        environments: ["int", "prd"]
+    environment: ${{ matrix.environments }}
+    steps:
+      - name: Checkout github repository
+        uses: actions/checkout@v4
+
+      - name: Build or simulate building
+        run: sleep 5
